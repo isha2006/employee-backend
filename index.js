@@ -9,6 +9,8 @@ import settingRouter from "./routes/setting.js"
 import dashboardRouter from "./routes/dashboard.js"
 import connectToDb from "./db/db.js"
 
+import {userRegister} from "./userSeed.js"
+
 connectToDb()
 const app=express()
 
@@ -29,3 +31,5 @@ app.use("/api/dashboard", dashboardRouter)
 app.listen(process.env.PORT, ()=>{
     console.log(`server is running at ${process.env.PORT}`)
 })
+
+userRegister()
